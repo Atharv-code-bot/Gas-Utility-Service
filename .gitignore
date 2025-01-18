@@ -1,0 +1,9 @@
+# .gitignore file
+*.pyc
+__pycache__/
+db.sqlite3  # Ignore SQLite database file
+*.log       # Ignore log files
+*.env       # Ignore environment files (if any)
+*.db        # Ignore other database files
+static/      # Ignore the static directory (you might want to push only the files that are in the `static/` folder after running `collectstatic` in production)
+media/       # Ignore the media directory (uploaded files)

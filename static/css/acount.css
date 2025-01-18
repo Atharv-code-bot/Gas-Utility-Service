@@ -1,0 +1,64 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('{% static "images/background.jpg" %}');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-top: 100px;
+    color: #fff;
+}
+
+p {
+    font-size: 1.25rem;
+    color: #ddd;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 15px 0;
+}
+
+ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 15px 30px;
+    background-color: #3498db;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Button Hover Effect */
+ul li a:hover {
+    background-color: #2980b9;
+    transform: translateY(-5px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    ul li a {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+}
