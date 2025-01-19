@@ -1,12 +1,29 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container">
-    <h2>Create New Request</h2>
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-primary">Create Request</button>
-    </form>
+<div class="container my-5 d-flex justify-content-center" style="min-height: 80vh; align-items: center;">
+    <div class="card shadow-lg p-4" style="border-radius: 15px; max-width: 600px; width: 100%; background-color: #f8f9fa;">
+        <h2 class="text-center text-primary mb-4" style="font-weight: bold;">Create New Request</h2>
+        <form method="POST" enctype="multipart/form-data" style="width: 100%;">
+            {% csrf_token %}
+            <div class="form-group mb-4">
+                {{ form.service_type.label_tag }}
+                {{ form.service_type }}
+            </div>
+            <div class="form-group mb-4">
+                {{ form.details.label_tag }}
+                {{ form.details }}
+            </div>
+            <div class="form-group mb-4">
+                {{ form.attached_file.label_tag }}
+                {{ form.attached_file }}
+            </div>
+            <div class="d-flex justify-content-between mt-4">
+                <button type="submit" class="btn btn-primary btn-lg shadow-sm"
+                    style="padding: 10px 20px; font-size: 1.1rem; width: 48%;">Create Request</button>
+                <a href="{% url 'account' %}" class="btn btn-secondary btn-lg shadow-sm"
+                    style="padding: 10px 20px; font-size: 1.1rem; width: 48%; text-align: center;">Back</a>
+            </div>
+        </form>
+    </div>
 </div>
-<a href="{% url 'account' %}" class="btn btn-secondary">Back</a>
 {% endblock %}

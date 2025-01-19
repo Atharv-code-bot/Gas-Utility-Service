@@ -1,10 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
+{% load static %}
 <link rel="stylesheet" href="{% static 'css/account.css' %}">
-<h2>Welcome, {{ user.username }}</h2>
-<p>What would you like to do today?</p>
-<ul>
-    <li><a href="/requests/create/">Submit a Request</a></li>
-    <li><a href="/requests/track/">Track Requests</a></li>
-</ul>
+<div class="container my-5">
+    <div class="row align-items-center">
+        <!-- Left Section: Text and Buttons -->
+        <div class="col-md-6 text-white">
+            <h2 class="text-primary display-4 mb-4">Welcome, {{ user.username }}!</h2>
+            <p class="lead mb-4" style="color:#000000;">What would you like to do today? You can manage your requests below:</p>
+            <div>
+                <a href="/requests/create/" class="btn btn-primary btn-lg mb-3 me-3 shadow-lg">Submit a Request</a>
+                <a href="/requests/track/" class="btn btn-info btn-lg mb-3 shadow-lg">Track Requests</a>
+            </div>
+        </div>
+
+        <!-- Right Section: Image -->
+        <div class="col-md-6 text-center">
+            <img src="{% static 'images/AI worker 2.jpeg'%}" alt="Welcome Image" class="img-fluid rounded shadow-lg">
+        </div>
+    </div>
+</div>
 {% endblock %}

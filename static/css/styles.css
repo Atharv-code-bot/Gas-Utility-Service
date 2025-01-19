@@ -1,71 +1,51 @@
 /* General Styles */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
 }
 
 /* Header Styles */
 header {
-    background-color: #2c3e50;
-    color: white;
-    padding: 20px 10%;
-    text-align: center;
-    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
-    margin: 0;
     font-size: 2.5rem;
+    font-weight: bold;
 }
 
-/* Navigation Styles */
-nav {
-    position: absolute;
-    top: 20px;
-    right: 10%;
+header nav {
+    margin-top: 10px;
 }
 
-nav form {
-    display: inline-block;
-    margin: 0;
-}
-
+/* Button Styles */
 nav button {
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
     font-size: 1rem;
-    display: flex;
-    align-items: center;
-}
-
-nav button svg {
-    margin-right: 8px;
-    width: 20px;
-    height: 20px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 nav button:hover {
-    color: #f39c12;
+    background-color: #007bff;
+    color: white;
 }
 
-/* Main Content Area */
-main {
-    padding: 20px;
-    margin-top: 80px;
-}
+/* Main Content */
 
-/* Responsive Design for smaller screens */
+
+
+
+
+/* Responsive Design */
 @media (max-width: 768px) {
     header h1 {
         font-size: 2rem;
     }
 
-    nav {
-        top: 10px;
-        right: 5%;
+    nav button {
+        font-size: 0.9rem;
     }
 }

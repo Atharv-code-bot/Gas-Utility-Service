@@ -1,6 +1,29 @@
 {% extends "base.html" %}
+
 {% block content %}
-<h2>Welcome to the Gas Utility Service</h2>
-<p>Your trusted partner for all your gas service needs.</p>
-<p><a href="/customers/login/">Login</a> | <a href="/customers/register/">Register</a></p>
+{% load static %}
+<div class="container my-5">
+    <div class="row align-items-center">
+        <!-- Description Section -->
+        <div class="col-md-6">
+            <h2 class="text-primary" style="font-size: 2.5rem;">Welcome to Gas Utility Service</h2>
+            <p class="mt-3" style="font-size: 1.25rem;">
+                Your trusted partner for reliable and efficient gas services. Whether you’re looking for installation, maintenance, or customer support, we are here to assist you every step of the way.
+            </p>
+            <p style="font-size: 1.25rem;">
+                Our services are tailored to meet your needs and ensure your satisfaction. Register now to explore exclusive benefits or log in to access your account and manage your services effortlessly.
+            </p>
+            <!-- Login and Register Buttons -->
+            <div class="mt-4">
+                <a href="/customers/login/" class="btn btn-primary btn-lg me-3">Login</a>
+                <a href="/customers/register/" class="btn btn-outline-primary btn-lg">Register</a>
+            </div>
+        </div>
+
+        <!-- Image Section -->
+        <div class="col-md-6 text-center">
+            <img src="{% static 'images/bynry.jpeg' %}" alt="Gas Service" class="img-fluid rounded shadow">
+        </div>
+    </div>
+</div>
 {% endblock %}

@@ -4,26 +4,105 @@
 {% load humanize %}  <!-- Load the humanize template tag for naturaltime -->
 
 {% block content %}
-<h2>Track Service Requests</h2>
-<table>
-    <thead>
-        <tr>
-            <th>Type</th>
-            <th>Status</th>
-            <th>Created At</th>
-            <th>Updated At</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for request in service_requests %}
-        <tr>
-            <td>{{ request.service_type }}</td>
-            <td>{{ request.status }}</td>
-            <td>{{ request.created_at|timezone:"Asia/Kolkata"|naturaltime }}</td>  <!-- Timezone filter and naturaltime -->
-            <td>{{ request.updated_at|timezone:"Asia/Kolkata"|naturaltime }}</td>  <!-- Timezone filter and naturaltime -->
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
-<a href="{% url 'account' %}" class="btn btn-secondary">Back</a>
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Track Service Requests</h2>
+
+    {% if service_requests %}
+    <table class="table custom-table">
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Status</th>
+                <th>Created At</th>
+                <th>Updated At</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for request in service_requests %}
+            <tr>
+                <td>{{ request.service_type }}</td>
+                <td>{{ request.status }}</td>
+                <td>{{ request.created_at|timezone:"Asia/Kolkata"|naturaltime }}</td>  <!-- Timezone filter and naturaltime -->
+                <td>{{ request.updated_at|timezone:"Asia/Kolkata"|naturaltime }}</td>  <!-- Timezone filter and naturaltime -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <div class="alert alert-info text-center">
+        No service requests available at the moment.
+    </div>
+    {% endif %}
+
+    <div class="text-center mt-4">
+        <a href="{% url 'account' %}" class="btn btn-secondary">Back</a>
+    </div>
+</div>
+
+{% block extra_css %}
+<style>
+    /* Table Styling */
+    .custom-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    .custom-table th, .custom-table td {
+        padding: 12px;
+        text-align: left;
+        font-size: 14px;
+    }
+
+    /* Table Header Styling */
+    .custom-table thead {
+        background-color: #007BFF;
+        color: white;
+        font-weight: bold;
+        text-transform: uppercase;
+        border-top: 2px solid #0056b3;
+        border-bottom: 2px solid #0056b3;
+    }
+
+    .custom-table th {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    /* Table Row Styling */
+    .custom-table tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    .custom-table tr:hover {
+        background-color: #e6f7ff;
+        cursor: pointer;
+    }
+
+    /* Table Body Styling */
+    .custom-table td {
+        text-align: center;
+    }
+
+    /* Back Button Styling */
+    .btn-secondary {
+        background-color: #6c757d;
+        border-color: #6c757d;
+    }
+
+    .btn-secondary:hover {
+        background-color: #5a6268;
+        border-color: #545b62;
+    }
+
+    /* Alert Styling */
+    .alert-info {
+        font-size: 16px;
+        background-color: #d1ecf1;
+        border-color: #bee5eb;
+        color: #0c5460;
+        padding: 15px;
+    }
+</style>
+{% endblock %}
 {% endblock %}

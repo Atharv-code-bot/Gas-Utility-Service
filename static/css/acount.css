@@ -1,64 +1,50 @@
-/* General Styles */
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-image: url('{% static "images/background.jpg" %}');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    text-align: center;
-}
+/* account.css */
 
-h2 {
-    font-size: 2.5rem;
-    margin-top: 100px;
+/* General styling for account page */
+
+/* Left Section Styling */
+.text-white {
     color: #fff;
 }
 
-p {
-    font-size: 1.25rem;
-    color: #ddd;
+.display-4 {
+    font-size: 2.5rem;
+    font-weight: bold;
 }
 
-ul {
-    list-style: none;
-    padding: 0;
+.lead {
+    font-size: 1.2rem;
 }
 
-ul li {
-    margin: 15px 0;
-}
-
-ul li a {
-    text-decoration: none;
-    color: white;
-    padding: 15px 30px;
-    background-color: #3498db;
-    border-radius: 5px;
+.btn-lg {
     font-size: 1.1rem;
-    display: inline-block;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    padding: 15px 30px;
 }
 
-/* Button Hover Effect */
-ul li a:hover {
+.btn-primary {
     background-color: #2980b9;
-    transform: translateY(-5px);
+    border-color: #2980b9;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    h2 {
-        font-size: 2rem;
-    }
+.btn-primary:hover {
+    background-color: #1f639b;
+    border-color: #1f639b;
+}
 
-    p {
-        font-size: 1rem;
-    }
+.btn-info {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+}
 
-    ul li a {
-        padding: 12px 25px;
-        font-size: 1rem;
-    }
+.btn-info:hover {
+    background-color: #138496;
+    border-color: #138496;
+}
+
+/* Right Section Image Styling */
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }

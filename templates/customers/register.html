@@ -1,21 +1,23 @@
-<!DOCTYPE html>
-{%load static%}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-</head>
-<body>
-    <div class="container">
-        <h2>Register</h2>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="card shadow-lg p-4 register-box" style="max-width: 100%; width: 100%; border-radius: 15px;">
+        <h2 class="text-center text-primary mb-4">Register</h2>
         <form method="POST">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit">Register</button>
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary btn-lg mt-3">Register</button>
+            </div>
         </form>
-        <p>Already have an account? <a href="{% url 'login' %}">Login here</a>.</p>
+        <p class="text-center mt-3">
+            Already have an account? <a href="{% url 'login' %}" class="text-decoration-none text-primary">Login here</a>.
+        </p>
     </div>
-</body>
-</html>
+</div>
+<script src="{% static 'js/login.js' %}"></script>
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+<link rel="stylesheet" href="{% static 'css/register.css' %}">
+{% endblock %}
