@@ -1,8 +1,4 @@
-/* account.css */
 
-/* General styling for account page */
-
-/* Left Section Styling */
 .text-white {
     color: #fff;
 }
@@ -41,7 +37,7 @@
     border-color: #138496;
 }
 
-/* Right Section Image Styling */
+
 .img-fluid {
     max-width: 100%;
     height: auto;
